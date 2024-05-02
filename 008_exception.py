@@ -12,3 +12,9 @@ except:
 # ZeroDivisionError: division by zero
     
 # try exception을 이용하면 except에서 에러 메시지가 나옴
+
+
+# try:
+#     정상소스
+# except:
+#     에러처리
