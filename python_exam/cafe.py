@@ -11,4 +11,5 @@ class Cafe:
     def ordering(self, cupSize):
         self.cupSize = cupSize
         print(f" {self.cafeName} -> 주문: {self.menu}, 크기:{self.cupSize}")
+
     
