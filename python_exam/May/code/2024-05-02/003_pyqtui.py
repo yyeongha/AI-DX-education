@@ -5,12 +5,20 @@ from PyQt5 import uic
 form_main = uic.loadUiType("main.ui")[0]
 
 class MyWindow(QMainWindow, form_main):
+    searchText = ''
+
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.btn1.clicked.connect(self.btn1_clicked)
         # self.btn2.clicked.connect(self.btn2_clicked)
         self.btn2.clicked.connect(self.btn2_ok)
+        self.btnSearch.clicked.connect(self.btnSearch_clicked)
+    
+    def btnSearch_clicked(self):
+        self.searchText = self.lbSearch.text()
+        QMessageBox.about(self, "검색창 검색어", f"'{self.searchText}'가 입력되었습니다.")
 
     def btn1_clicked(self):
         print("버튼1클릭")
