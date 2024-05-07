@@ -62,7 +62,7 @@
     <string>검색</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QListView" name="lv_search">
    <property name="geometry">
     <rect>
      <x>36</x>
@@ -83,6 +83,19 @@
    </property>
    <property name="text">
     <string>저장</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_add">
+   <property name="geometry">
+    <rect>
+     <x>332</x>
+     <y>30</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>리스트 추가</string>
    </property>
   </widget>
  </widget>
