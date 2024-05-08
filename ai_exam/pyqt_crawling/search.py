@@ -42,16 +42,16 @@ class SearchWin(QDialog, searchMain):
         naverClear()
         self.searchKin = self.le_search.text()
         # 검색 동작
-        for i in range(10):
+        for i in range(100):
             page = i + 1
             naverKin(self.searchKin, page)
             print('#'*20 + ' ' + str(page) + ' ' + '#'*20)
             
-            # # 리스트뷰에 보여주기 
-            # model = QStandardItemModel()
-            # for data in searchList:
-            #     self.model.appendRow(QStandardItem(data[0]))
-            # self.lv_search.setModel(model)
+            # 리스트뷰에 보여주기 
+            model = QStandardItemModel()
+            for data in sList:
+                model.appendRow(QStandardItem(data[0]))
+            self.lv_search.setModel(model)
                 
             time.sleep(1.5) # -> 랜덤으로 지정하면 기업에서 못잡음
 

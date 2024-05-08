@@ -49,10 +49,13 @@ def naverKin(search, i):
             tmp.append(title.text)
             tmp.append(title.attrs['href'])
             searchList.append(tmp)
+            
+            return searchList
 
 def saveKin(search):
     # 파일로 저장
-    f = codecs.open('search1.csv', 'w', encoding='utf-8')
+    f = codecs.open(f'{search}.csv', 'w', encoding='utf-8')
+    
     csvWriter = csv.writer(f)
 
     csvWriter.writerow(['제목', '링크'])
