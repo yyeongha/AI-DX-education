@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>535</width>
+    <height>364</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn_search">
+    <property name="geometry">
+     <rect>
+      <x>52</x>
+      <y>44</y>
+      <width>211</width>
+      <height>147</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>네이버 지식인 크롤링</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_wordcloud">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>42</y>
+      <width>211</width>
+      <height>147</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>워드클라우드 데이터분석</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_close">
+    <property name="geometry">
+     <rect>
+      <x>374</x>
+      <y>208</y>
+      <width>115</width>
+      <height>59</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>종료</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>535</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
