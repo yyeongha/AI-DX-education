@@ -98,3 +98,9 @@ conn = pymysql.connect(
 conn.close()
 ```
 
+## 등록
+* dbadd.py
+![등록]()
+
+
+## 
