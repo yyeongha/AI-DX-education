@@ -4,7 +4,7 @@ import openai
 
 # 2. 환경설정
 # openai 키등록
-OPENAI_KEY = "put your api key!"
+OPENAI_KEY = "put your api key"
 openai.api_key = OPENAI_KEY
 
 # 3. 인공지능 모델 선택
