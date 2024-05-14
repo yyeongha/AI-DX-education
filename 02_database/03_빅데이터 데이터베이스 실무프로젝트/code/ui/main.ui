@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>416</width>
+    <height>445</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>28</x>
+      <y>12</y>
+      <width>35</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>검색:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_search">
+    <property name="geometry">
+     <rect>
+      <x>68</x>
+      <y>10</y>
+      <width>113</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_search">
+    <property name="geometry">
+     <rect>
+      <x>182</x>
+      <y>8</y>
+      <width>89</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>검색</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_add">
+    <property name="geometry">
+     <rect>
+      <x>22</x>
+      <y>362</y>
+      <width>89</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>추가</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_edit">
+    <property name="geometry">
+     <rect>
+      <x>116</x>
+      <y>362</y>
+      <width>89</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>수정</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_del">
+    <property name="geometry">
+     <rect>
+      <x>212</x>
+      <y>362</y>
+      <width>89</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>삭제</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_close">
+    <property name="geometry">
+     <rect>
+      <x>306</x>
+      <y>362</y>
+      <width>89</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>종료</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tbl_mem">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>50</y>
+      <width>409</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>416</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
