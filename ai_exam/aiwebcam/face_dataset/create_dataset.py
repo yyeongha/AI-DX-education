@@ -51,7 +51,20 @@ for file in file_list:
     print(f'{sp_file[2]}, {sp_file[1]}', file=save_file)
     
 # dataset dictionary
-print(dataset_labels)    
+print(dataset_labels)
+
+save_file.close()
+
+# 원본파일을 dataset에 처리하는 함수
+org_path = "./org_data"
+file_list = os.listdir(org_path)
+for dir in file_list:
+    files = os.listdir(org_path + f'./{dir}')
+    print('*'*50)
+    print(dir)
+    print('*'*50)
+    print(files)
+        
     
     
     
