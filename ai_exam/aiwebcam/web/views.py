@@ -2,14 +2,19 @@ from django.shortcuts import render
 from django.http import HttpResponse, StreamingHttpResponse
 
 # opencv 라이브러리 불러오기
-import dlib
 import cv2
+import dlib
 import matplotlib.patches as patches
 import numpy as np
 
+# 사용할 테이블 설정
+import .models import WebUser
+
+
+# 오케
 class FaceDetector:
     def __init__(self):
-        self.
+        self.detector = dlib.get_frontal_face_detector()
         self.image = None
         self.detections = None
 
@@ -27,45 +32,8 @@ class FaceDetector:
         for det in self.detections:
             x, y, w, h = det.left(), det.top(), det.width(), det.height()
             cv2.rectangle(self.image, (x, y), (x + w, y + h), (0, 0, 255), 2)
-            
-# 실시간 영상에서 얼굴 검출 예시
-if __name__ == "__main__":
-    predictor_path = "./trained/shape_predictor_68_face_landmarks.dat"
 
-    face_detector = FaceDetector(detector_path="", predictor_path=predictor_path)
-
-    # 영상 소스 가져오기 (카메라를 사용)
-    cap = cv2.VideoCapture(0)
-
-    # 카메라 크기 조정
-    cap.set(3, 1280)
-    cap.set(4, 720)
-
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-
-        # 원본 영상 (좌우 반전)
-        frame = cv2.flip(frame, 1)
-        
-        # Dlib을 사용하여 얼굴 검출
-        face_detector.load_image(frame)
-        face_detector.detect_faces()
-
-        # 얼굴을 프레임에 그림
-        face_detector.draw_faces()
-
-        # OpenCV를 사용하여 원본 영상 표시
-        cv2.imshow('camera', frame)
-
-        # 'q' 키를 누르면 종료
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-
-    cap.release()
-    cv2.destroyAllWindows()
-    
+face_detector = FaceDetector()
 
 def video_feed(request):
     return StreamingHttpResponse(stream(),
@@ -80,8 +48,14 @@ def stream():
         if not ret:
             print("카메라를 인식할 수 없습니다.")
             break
-        
-        # 얼굴인식 처리 여기에 넣으면 됨
+
+        # 얼굴인식 처리
+        # Dlib을 사용하여 얼굴 검출
+        face_detector.load_image(frame)
+        face_detector.detect_faces()
+
+        # 얼굴을 프레임에 그림
+        face_detector.draw_faces()
 
         # 서버로 데이터를 전송
         # 이미지를 binary 웹에서 전송이 가능한 형태
@@ -94,3 +68,11 @@ def stream():
 # Create your views here.
 def index(request):
     return render(request, 'webcam_main.html')
+
+def adduser(request):
+    # 데이터베이스에 자료 저장
+    adduser = WebUser()
+    adduser.names = "홍길동"
+    adduser.telnos = "010-0000-0000"
+    adduser.save()
+    return HttpResponse("adduser 링크")
