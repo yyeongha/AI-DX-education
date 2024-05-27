@@ -25,7 +25,7 @@ file_list = os.listdir(org_path)
 dataset_labels = {}
 
 # keeping previous data
-os.rename('./dataset', f'./dataset_{now_date}')
+# os.rename('./dataset', f'./dataset_{now_date}') # 할때마다 새로운 폴더로 생성됨 그래서 막음. 나중에 쓸때 주석해제
 
 # making dataset
 # making dataset directory 
