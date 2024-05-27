@@ -1,8 +1,8 @@
 ##########################################################
 # 프로그램명 : dlib 라이브러리를 이용한 face 추출 프로그램(dataset)
-# 개발일자 : 2024년 5월 27일
+# 개발일자 : 2024년 05월 27일
 # 개발버젼 : v 1.x
-# 개발자명 : 양하영
+# 개발자명 : 홍길동
 # 라이브러리 : face recognition, dlib, faiss-cpu:1.7.3
 ##########################################################
 
@@ -81,7 +81,7 @@ face_index.add(faceEncode)
 
 # 예측하기
 # 얼굴인식
-test_img = face_recognition.load_image_file('test_img/1.png')
+test_img = face_recognition.load_image_file('test_img/2.jpg')
 test_face = face_recognition.face_locations(test_img)
 if len(test_face) != 1:
     print("테스트 얼굴에 1개의 얼굴만 존재해야 합니다.")
@@ -107,9 +107,6 @@ img = face_recognition.load_image_file('./test.jpg')
 # 인코딩
 test_en = face_recognition.face_encodings(img)[0]
 
-# 인코딩
-test_en = face_recognition.face_encodings(face_cut)[0]
-
 # 넘파이
 test_en = np.array(test_en, dtype=np.float32).reshape(-1, 128)
 # (128) -> (1, 128)
@@ -122,6 +119,6 @@ label = [train_labels[i] for i in result[0]]
 print(label)
 
 # 벡터데이터 저장
-faiss.write_index(face_index, './train/face_20240527.bin')
-
-
+faiss.write_index(
+    face_index, 
+    './train/face_20240527.bin')

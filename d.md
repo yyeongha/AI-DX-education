@@ -1,23 +1,22 @@
-<django 서비스에 db 연결하기>
+# django 서비스에 db 연결하기
 * vscode
-open fole > aiwebcam > settings.py
+open folder > aiwebcam > settings.py 생성
 
-1. 프로젝트 경로
+## 1. 프로젝트 경로
 d:\ai_exam\ai_webcam
 
-2. 가상환경 생성
--> 기존 가상환경 생성
+## 2. 가상환경 생성
+-> 기존 가상환경 사용
 p312_aiwebcam
 
-4. 라이브러리 설치 (django) - vscode 터미널
+## 3. 라이브러리 설치 (django) - vscode 터미널
+```
 pip install django==4.0
 pip install opencv-python
 pip install pillow
 conda install -c conda-forge dlib
 pip install matplotlib
-
-## 경로
-/aiwebcam/settings.py
+```
 
 * 실행 - vscode 터미널
 python manage.py runserver

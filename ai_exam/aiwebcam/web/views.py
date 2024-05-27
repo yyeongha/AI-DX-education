@@ -8,7 +8,7 @@ import matplotlib.patches as patches
 import numpy as np
 
 # 사용할 테이블 설정
-import .models import WebUser
+from .models import WebUser
 
 
 # 오케
