@@ -10,6 +10,8 @@ import numpy as np
 # 사용할 테이블 설정
 from .models import WebUser
 
+# 인공지능 faiss 라이브러리 호출
+from faiss_predict import face_detect
 
 # 오케
 class FaceDetector:
@@ -48,6 +50,11 @@ def stream():
         if not ret:
             print("카메라를 인식할 수 없습니다.")
             break
+        
+        # if cv2.waitKey(1) & 0xFF == ord('q'):
+            # 이미지 저장
+        cv2.imwrite('.train/test.jpg', frame)
+        print(face_detect('./train/test.jpg'))
 
         # 얼굴인식 처리
         # Dlib을 사용하여 얼굴 검출
@@ -76,3 +83,7 @@ def adduser(request):
     adduser.telnos = "010-0000-0000"
     adduser.save()
     return HttpResponse("adduser 링크")
+
+def face_test(request):
+    face_detect('./test_img/1.png')
+    return HttpResponse("face_test 함수")

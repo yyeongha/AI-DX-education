@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--+o2p0hz9w=2$i+&i$val1(mj@a4qes=inu2^f*8220@d)w)6u'
+SECRET_KEY = 'django-insecure-7s77*wz8cuigv8z-ghsk&u8l7*wpk*1^cqj(=a=b@2mr+a3%o&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'web'
+    'web',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'aiwebcam.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,11 +79,10 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-    
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'yang',
-        'USER': 'yangdb',
+        'NAME': 'psjdb',
+        'USER': 'psj',
         'PASSWORD': '@ai1234@',
         'HOST': '211.216.177.2',
         'PORT': '3306'

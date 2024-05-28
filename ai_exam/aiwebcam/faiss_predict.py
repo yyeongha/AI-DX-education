@@ -5,6 +5,9 @@ from PIL import Image
 import faiss
 import face_recognition
 
+# 전역변수
+g_wait = False
+
 ################################################
 # 함수 리스트
 ################################################
@@ -29,11 +32,22 @@ face_index = faiss.read_index('./train/face_20240527.bin')
 # 학습결과 정답
 train_labels = np.load('./train/labels.npy')
 
-def face_detect(img):
+def face_detect(imgData):
+    global g_wait
+
+    if g_wait == True:
+        return "unknown"
+
+    g_wait = True
+    # 파일로 저장
+    pil_img = Image.fromarray(imgData)
+    pil_img.save('./train/test1.jpg')
+
     # 예측하기
-    test_img = face_recognition.load_image_file(img)
+    test_img = face_recognition.load_image_file('./train/test1.jpg')
     test_face = face_recognition.face_locations(test_img)
     if len(test_face) != 1:
+        g_wait = False
         return "unknown"
 
     # 얼굴만 잘라내기(시계방향)
@@ -69,6 +83,8 @@ def face_detect(img):
     print(distance)
 
     face_rst = most_frequent(label)
+
+    g_wait = False
 
     if face_rst[1] < 3:
         return "unknown"
