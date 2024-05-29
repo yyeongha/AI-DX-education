@@ -4,6 +4,10 @@ import torch
 # 모델
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
 
+# 파라미터 미세조정
+model.conf = 0.6 # 60% 이상의 확률로 검출된 객체만 출력
+model.iou = 0.45 # 45% 이상의 IOU를 가진 객체만 출력
+
 # 이미지 검증 (predict)
 img = "https://cdn.mediatoday.co.kr/news/photo/202311/313885_438531_4716.jpg"
 
@@ -20,7 +24,8 @@ results.show()
 print(results.pandas().xyxy[0])
 
 # savedata 폴더에 저장
-results.save()
+# results.save()
 
 # crop
-results.crop()
+# results.crop()
+
