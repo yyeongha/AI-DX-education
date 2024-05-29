@@ -28,6 +28,7 @@ Usage - formats:
                                  yolov5s_paddle_model       # PaddlePaddle
 """
 
+# 오류때문에 추가
 import argparse
 import csv
 import os
@@ -36,6 +37,11 @@ import sys
 from pathlib import Path
 
 import torch
+
+# 오류때문에 추가
+import pathlib
+temp = pathlib.PosixPath
+pathlib.PosixPath = pathlib.WindowsPath 
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
